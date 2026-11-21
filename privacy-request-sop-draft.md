@@ -5,7 +5,7 @@
 Respond consistently to requests about information controlled by FiercLioness and The Lioness Den without exposing private Discord or Supabase data, and without deleting audit history before confirming obligations.
 
 ## Intake
-1. Member starts an existing **#support** ticket in The Lioness Den. An administrator may use an established official community email if one is later selected and verified.
+1. Member may email the official FiercLioness account **fiercelioness43@gmail.com** or, if still in the Discord server, start an existing **#support** ticket in The Lioness Den. This address is approved only for the policy draft at this stage, not yet published as a public contact.
 2. Accept requests such as: access/explanation, correction, deletion, account disconnect, objection or concern, and security incident report.
 3. Ask for only the minimum information needed to identify the relevant service and account. Do **not** request a password, Discord login code, access token, private messages, government ID, or unrelated health/financial data in the ticket.
 4. Keep the ticket restricted to authorized staff. Do not publish an account's request or use the member's identity as an example.
@@ -29,7 +29,7 @@ Respond consistently to requests about information controlled by FiercLioness an
 “Thanks for reaching out to The Lioness Den support team. We can review privacy questions about the community tools we operate. Please tell us which feature you mean (for example, Den Missions, the Welcome Guide survey, or a Discord message). Please don't share passwords, login codes or sensitive personal information here. We'll review what information we control and explain the next steps.”
 
 ## Publication gates
-- Select and test a durable official privacy contact mechanism; #support tickets may be inaccessible to people who leave the server, so provide an alternate mechanism before publishing the policy.
+- Official branded Gmail account identified and dedicated **Privacy Requests** Gmail label created (Nov 21). Before publication, confirm the owner accepts its public exposure, mailbox access and monitoring routine, and test reception and handling. #support tickets may be inaccessible to people who leave the server.
 - Choose actual record-retention schedules for survey responses, Den Missions activity/audit records, and any backup data; implement and verify those schedules before claiming them.
 - Verify Google Sites homepage embedded services and analytics behavior.
 - Conduct legal/policy review appropriate to community reach and applicable jurisdictions.
