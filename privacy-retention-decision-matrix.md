@@ -1,4 +1,27 @@
 # Privacy Retention Decision Matrix — Review Draft
+
+## Candidate retention schedule — pending explicit approval and implementation (Nov 21, 2026)
+
+**These durations are proposals and are NOT implemented. They must not be stated in the public privacy notice as active policy.**
+
+| Information | Proposed time | Trigger / notes |
+|---|---:|---|
+| Welcome Guide referral survey source, submitted_on, day-HMAC | 90 days | From submission date; source-only aggregates could be computed separately without person-level identifiers after deletion |
+| Weekly mission selections | 180 days | From community week end; verify dependency/cascade and protect reviewed submissions before implementation |
+| Mission completion reports / progress evidence | 180 days minimum | Coordinate with selection lifecycle; review whether reviewed records require separate narrower retained audit details |
+| Achievements and role award records | 12 months | From final achievement event or last needed dispute date; preserve current member's active role and documented appeal decisions |
+| Private administrator review and award-attempt logs | 12 months | From event date, subject to incidents, disputes, legal holds, and least-privilege access |
+| Discord/Supabase Auth identity and active session | While necessary for member's use | Verified account deletion workflow needed; account deletion is separate from Discord data and provider backups |
+| External provider logs, backups, and security metadata | Provider-dependent | Verify actual retention independently; do not claim backend purges can instantly clear backups |
+
+**Implementation safeguards:** Determine legal applicability, specify event timestamps accurately, test deletion candidate selection against a read-only snapshot, use a tested staging migration/function, preserve audit integrity, get explicit approval for destructive production cleanup, log only aggregate outcomes (not personal identifiers), and re-audit provider logs and backup limitations.
+
+**Read-only aggregate snapshot, Nov 21, 2026:** survey 0; weekly selections 12; completion reports 3; achievements 0; private review log 3; award attempts 0. This is a point-in-time snapshot, not a promise about future counts.
+
+**Basis:** Actual Den Missions table/trigger/foreign-key and cron metadata; FTC data minimization guidance; Supabase backup documentation. Durations are voluntary design recommendations, **not** statutory requirements.
+
+---
+
 Date: 2026-11-21. **NOT an implemented retention policy.** No existing records or services were changed.
 
 | Data category | Verified collected or stored | Verified purge schedule | Proposed decision to approve |
