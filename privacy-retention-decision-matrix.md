@@ -1,5 +1,21 @@
 # Privacy Retention Decision Matrix — Review Draft
 
+## November 21 technical retention risk — confirmed from production trigger definitions
+
+Read-only inspection of `public.protect_reviewed_mission_records()` and `public.protect_reviewed_mission_reports()` found that **deleting a reviewed or verified mission selection or completion report currently raises an exception**. The weekly selection protection checks for linked `mission_internal.review_log` or `mission_progress`, and report protection checks for review entries or linked progress. Additionally, `mission_progress` and `mission_reports` foreign keys reference weekly selections with ON DELETE CASCADE, but the protection triggers intentionally block deletion of protected records.
+
+**Implication:** A blanket "delete all weekly mission records after 180 days" policy is not currently implementable without redesign. Do **not** disable/bypass these triggers, delete audit data prematurely, or promise automatic deletion in a published notice.
+
+**Recommended staged approach:**
+1. Approve the *principle* of minimizing retention, but treat the draft 90/180/365-day numbers as targets until legal and functional review.
+2. Permit cleanup of genuinely unreviewed/unverified, non-achievement-linked selections only after a tested eligibility query and staging run; never delete related reports without validating their status.
+3. Separately design and review a preservation/anonymization policy for reviewed or verified mission evidence and achievements. Confirm whether account identifiers can be minimized while retaining necessary dispute and audit integrity.
+4. Create retention tests in a disposable database; verify role awards, reviews, weekly rollover, and deletion-denial paths before considering any change.
+5. Require explicit approval for all production cleanup or schema/trigger changes. Final public wording should describe *current* handling accurately, not future aspirations.
+
+No data was read at member level or mutated during this check.
+
+---
 ## Candidate retention schedule — pending explicit approval and implementation (Nov 21, 2026)
 
 **These durations are proposals and are NOT implemented. They must not be stated in the public privacy notice as active policy.**
